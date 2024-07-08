@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: gcr.io/your-gcp-project-id/backend:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: PGHOST
+          value: "34.136.236.4"
+        - name: PGDATABASE
+          value: "faizadb"
+        - name: PGUSER
+          value: "faizauser"
+        - name: PGPASSWORD
+          value: "Fayiz@293"
