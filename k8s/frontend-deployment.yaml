@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gcr.io/your-gcp-project-id/frontend:latest
+        image: gcr.io/regal-scholar-423322-h0/frontend-app:latest
         ports:
         - containerPort: 80

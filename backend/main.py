@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import psycopg2
 import os
 import logging
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all origins
 
 def get_db_connection():
     conn = psycopg2.connect(
@@ -16,8 +18,8 @@ def get_db_connection():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-    value1 = request.form.get('value1')
-    value2 = request.form.get('value2')
+    value1 = request.json.get('value1')
+    value2 = request.json.get('value2')
     if not value1 or not value2:
         logging.error("Missing values")
         return jsonify({"error": "Missing values"}), 400

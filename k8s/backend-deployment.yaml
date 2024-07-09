@@ -16,15 +16,15 @@ spec:
     spec:
       containers:
       - name: backend
-        image: gcr.io/your-gcp-project-id/backend:latest
+        image: gcr.io/regal-scholar-423322-h0/backend-app:latest
         ports:
         - containerPort: 5000
         env:
         - name: PGHOST
-          value: "34.136.236.4"
+          value: "34.72.51.3"
         - name: PGDATABASE
-          value: "faizadb"
+          value: "postgres"
         - name: PGUSER
-          value: "faizauser"
+          value: "postgres"
         - name: PGPASSWORD
-          value: "Fayiz@293"
+          value: "Ashu123"

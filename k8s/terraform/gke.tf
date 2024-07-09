@@ -7,6 +7,7 @@ resource "google_container_cluster" "primary" {
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform",
     ]
+    disk_size_gb = 50  # Reduce disk size per node
   }
 
   initial_node_count = 3
